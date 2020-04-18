@@ -51,7 +51,7 @@ async function main(){
 
     csvWriter
         .writeRecords(cvsData)
-        .then(()=> console.log('The CSV file was written successfully'));
+        .then(()=> console.log('Dados gerados, um arquivos .cvs foi gerado na raiz do projeto com as informações'));
 }
 
 main()
