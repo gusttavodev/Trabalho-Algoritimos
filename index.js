@@ -2,6 +2,7 @@ const boubleSort =  require("./boubleSort")
 const insertionSort =  require("./insertionSort")
 const mergeSort =  require("./mergeSort")
 const quickSort =  require("./quickSort")
+const selectionSort =  require("./selectionSort")
 
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
@@ -21,21 +22,30 @@ async function main(){
         executionResult.push(await boubleSort.callBubbleSortWithQuantity(data[index], executionQunatity))
         executionResult.push(await insertionSort.callInsertionSortWithQuantity(data[index], executionQunatity)) 
         executionResult.push(await mergeSort.callMergesortWithQuantity(data[index], executionQunatity))      
-        executionResult.push(await quickSort.callQuickSortWithQuantity(data[index], executionQunatity))        
+        executionResult.push(await quickSort.callQuickSortWithQuantity(data[index], executionQunatity))   
+        executionResult.push(await selectionSort.callSelectionSortWithQuantity(data[index], executionQunatity))        
     }
-      
     
+    console.log("Result", executionResult[2].value);
+    
+    const used = process.memoryUsage();
     const cvsData = []
     for (let index = 0; index < executionResult.length; index++) {       
         cvsData.push({
             algoritimo: executionResult[index].type,
             entrada: executionResult[index].data_type,
-            valor_de_entrada: executionResult[index].value,
+            valor_de_entrada: executionResult[index].value.toString(),
             tempo_de_execução: `${executionResult[index].duration} ms`,
             tempo_medio: `${(executionResult[index].duration/executionQunatity).toFixed(9)} ms`,
             execution_quantity: executionQunatity,
         })
     } 
+
+    
+    console.log(`Uso de memoria \n`);
+    for (let key in used) {
+        console.log(`${key} ${Math.round(used[key] / 1024 / 1024 * 100) / 100} MB`);
+    }
 
     const csvWriter = createCsvWriter({
         path: 'result.csv',
@@ -51,7 +61,7 @@ async function main(){
 
     csvWriter
         .writeRecords(cvsData)
-        .then(()=> console.log('Dados gerados, um arquivos .cvs foi gerado na raiz do projeto com as informações'));
+        .then(()=> console.log('\nUm arquivos .cvs foi gerado na raiz do projeto com as informações'));
 }
 
 main()

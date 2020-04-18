@@ -23,19 +23,19 @@ function bubbleSort(a)
 } 
 
 module.exports = {
-  async callBubbleSort(data){
+  async callBubbleSort(data){   
+    
     var start = performance()     
-    let val = await bubbleSort(data.value)    
+    await bubbleSort(data.value)    
     var end = performance()
     const duration = (end - start).toFixed(3)
     
-    const result = {duration: duration, value: val, type: "BoubleSort", data_type: data.type}
+    const result = {duration: duration, value: data.value, type: "BoubleSort", data_type: data.type}
     return result    
   },
 
   async callBubbleSortWithQuantity(data, quantity){
     var start = performance()     
-
     for (let index = 0; index < quantity; index++) {
       await bubbleSort(data.value)      
     }
