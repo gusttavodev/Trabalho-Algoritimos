@@ -25,11 +25,11 @@ function bubbleSort(a)
 module.exports = {
   async callBubbleSort(data){
     var start = performance()     
-    let val = await bubbleSort(data)    
+    let val = await bubbleSort(data.value)    
     var end = performance()
     const duration = (end - start).toFixed(3)
     
-    const result = {duration: duration, value: val}
+    const result = {duration: duration, value: val, type: "BoubleSort", data_type: data.type}
     return result    
   }
 }

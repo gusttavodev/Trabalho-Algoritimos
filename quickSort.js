@@ -26,11 +26,11 @@ function quickSort(origArray) {
 module.exports = {
     async callQuickSort(data){
       var start = performance()     
-      let val = await quickSort(data)       
+      let val = await quickSort(data.value)       
       var end = performance()
       const duration = (end - start).toFixed(3)
       
-      const result = {duration: duration, value: val}
+      const result = {duration: duration, value: val, type: "QuickSort", data_type: data.type}
       return result     
     }
   }

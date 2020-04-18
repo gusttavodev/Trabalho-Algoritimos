@@ -29,11 +29,11 @@ function mergesort(arr) {
 module.exports = {
     async callMergesort(data){
         var start = performance()        
-        let val = await mergesort(data)        
+        let val = await mergesort(data.value)        
         var end = performance()
         const duration = (end - start).toFixed(3)
         
-        const result = {duration: duration, value: val}
+        const result = {duration: duration, value: val, type: "MergeSort", data_type: data.type}
         return result          
     }
 }
