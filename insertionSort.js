@@ -20,12 +20,26 @@ function insertionSort(vetor)
 module.exports = {
     async callInsertionSort(data){
         var start = performance()        
-        let val = await insertionSort(data.value)
+        let val = await insertionSort(data)
 
         var end = performance()
         const duration = (end - start).toFixed(3)
         
         const result = {duration: duration, value: val, type: "InsertionSort", data_type: data.type}
+        return result         
+    },
+
+    async callInsertionSortWithQuantity(data, quantity){
+        var start = performance()   
+
+        for (let index = 0; index < quantity; index++) {
+            await insertionSort(data.value)      
+        }
+
+        var end = performance()
+        const duration = (end - start).toFixed(3)
+        
+        const result = {duration: duration, value: data.value, type: "InsertionSort", data_type: data.type}
         return result         
     }
 }

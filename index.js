@@ -14,12 +14,14 @@ async function main(){
     data[1] = {value: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], type: "Valores ordenados"}
     data[2] = {value: [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1], type: "Valores ordenados decrescente"}
 
+    const executionQunatity = 10000
+
     let executionResult = []
     for (let index = 0; index < data.length; index++) {
-        executionResult.push(await boubleSort.callBubbleSort(data[index]))
-        executionResult.push(await insertionSort.callInsertionSort(data[index])) 
-        executionResult.push(await mergeSort.callMergesort(data[index]))      
-        executionResult.push(await quickSort.callQuickSort(data[index]))        
+        executionResult.push(await boubleSort.callBubbleSortWithQuantity(data[index], executionQunatity))
+        executionResult.push(await insertionSort.callInsertionSortWithQuantity(data[index], executionQunatity)) 
+        executionResult.push(await mergeSort.callMergesortWithQuantity(data[index], executionQunatity))      
+        executionResult.push(await quickSort.callQuickSortWithQuantity(data[index], executionQunatity))        
     }
       
     
@@ -29,7 +31,9 @@ async function main(){
             algoritimo: executionResult[index].type,
             entrada: executionResult[index].data_type,
             valor_de_entrada: executionResult[index].value,
-            tempo_de_execução: executionResult[index].duration,
+            tempo_de_execução: `${executionResult[index].duration} ms`,
+            tempo_medio: `${(executionResult[index].duration/executionQunatity).toFixed(9)} ms`,
+            execution_quantity: executionQunatity,
         })
     } 
 
@@ -39,7 +43,9 @@ async function main(){
           {id: 'algoritimo', title: 'Algoritimo'},
           {id: 'entrada', title: 'Entrada'},
           {id: 'valor_de_entrada', title: 'Valor de entrada'},
-          {id: 'tempo_de_execução', title: 'Tempo de execução em MS'},
+          {id: 'tempo_de_execução', title: 'Tempo de execução Total'},
+          {id: 'tempo_medio', title: 'Média de execução individual'},
+          {id: 'execution_quantity', title: 'Quantidade de execuções'},
         ]
       });
 

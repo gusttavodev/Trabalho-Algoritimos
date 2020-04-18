@@ -35,5 +35,19 @@ module.exports = {
         
         const result = {duration: duration, value: val, type: "MergeSort", data_type: data.type}
         return result          
+    },
+
+    async callMergesortWithQuantity(data, quantity){
+        var start = performance()        
+        
+        for (let index = 0; index < quantity; index++) {
+            await mergesort(data.value)      
+        }
+
+        var end = performance()
+        const duration = (end - start).toFixed(3)
+        
+        const result = {duration: duration, value: data.value, type: "MergeSort", data_type: data.type}
+        return result          
     }
 }
