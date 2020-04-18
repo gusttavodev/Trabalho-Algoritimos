@@ -39,11 +39,18 @@ module.exports = {
     for (let index = 0; index < quantity; index++) {
       await bubbleSort(data.value)      
     }
-    
+    const used = process.memoryUsage();
     var end = performance()
     const duration = (end - start).toFixed(3)
     
-    const result = {duration: duration, value: data.value, type: "BoubleSort", data_type: data.type}
+    const result = {
+      duration: duration, value: data.value, type: "BoubleSort", data_type: data.type,
+      rss: `${Math.round(used.rss / 1024 / 1024 * 100) / 100} MB`, 
+      heapTotal: `${Math.round(used.heapTotal / 1024 / 1024 * 100) / 100} MB`,
+      heapUsed: `${Math.round(used.heapUsed / 1024 / 1024 * 100) / 100} MB`,
+      external: `${Math.round(used.external / 1024 / 1024 * 100) / 100} MB`
+    }
+
     return result    
   }
   

@@ -25,9 +25,7 @@ async function main(){
         executionResult.push(await quickSort.callQuickSortWithQuantity(data[index], executionQunatity))   
         executionResult.push(await selectionSort.callSelectionSortWithQuantity(data[index], executionQunatity))        
     }
-    
-    
-    const used = process.memoryUsage();
+
     const cvsData = []
     for (let index = 0; index < executionResult.length; index++) {       
         cvsData.push({
@@ -37,14 +35,13 @@ async function main(){
             tempo_de_execução: `${executionResult[index].duration} ms`,
             tempo_medio: `${(executionResult[index].duration/executionQunatity).toFixed(9)} ms`,
             execution_quantity: executionQunatity,
-        })
-    } 
 
-    
-    console.log(`Uso de memoria \n`);
-    for (let key in used) {
-        console.log(`${key} ${Math.round(used[key] / 1024 / 1024 * 100) / 100} MB`);
-    }
+            memory_rss: executionResult[index].rss,
+            memory_heapTotal: executionResult[index].heapTotal,
+            memory_heapUsed: executionResult[index].heapUsed,
+            memory_external: executionResult[index].external,
+        })
+    }     
 
     const csvWriter = createCsvWriter({
         path: 'result.csv',
@@ -55,6 +52,11 @@ async function main(){
           {id: 'tempo_de_execução', title: 'Tempo de execução Total'},
           {id: 'tempo_medio', title: 'Média de execução individual'},
           {id: 'execution_quantity', title: 'Quantidade de execuções'},
+
+          {id: 'memory_rss', title: 'Uso de memória rss'},
+          {id: 'memory_heapTotal', title: 'Uso de memória heapTotal'},
+          {id: 'memory_heapUsed', title: 'Uso de memória heapUsed'},
+          {id: 'memory_external', title: 'Uso de memória external'},
         ]
       });
 
