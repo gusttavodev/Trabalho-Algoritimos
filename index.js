@@ -15,7 +15,7 @@ async function main(){
     data[1] = {value: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], type: "Valores ordenados"}
     data[2] = {value: [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1], type: "Valores ordenados decrescente"}
 
-    const executionQunatity = 10000
+    const executionQunatity = 1000000
 
     let executionResult = []
     for (let index = 0; index < data.length; index++) {
@@ -26,7 +26,6 @@ async function main(){
         executionResult.push(await selectionSort.callSelectionSortWithQuantity(data[index], executionQunatity))        
     }
     
-    console.log("Result", executionResult[2].value);
     
     const used = process.memoryUsage();
     const cvsData = []

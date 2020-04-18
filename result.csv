@@ -1,16 +1,16 @@
 Algoritimo,Entrada,Valor de entrada,Tempo de execução Total,Média de execução individual,Quantidade de execuções
-BoubleSort,Valores desordenados,"1,4,9,12,23,64,84,98,122,213,234,345,455",0.580 ms,0.290000000 ms,2
-InsertionSort,Valores desordenados,"1,4,9,12,23,64,84,98,122,213,234,345,455",0.047 ms,0.023500000 ms,2
-MergeSort,Valores desordenados,"1,4,9,12,23,64,84,98,122,213,234,345,455",0.121 ms,0.060500000 ms,2
-QuickSort,Valores desordenados,"1,4,9,12,23,64,84,98,122,213,234,345,455",0.102 ms,0.051000000 ms,2
-SelectionSort,Valores desordenados,"1,4,9,12,23,64,84,98,122,213,234,345,455",0.056 ms,0.028000000 ms,2
-BoubleSort,Valores ordenados,"1,2,3,4,5,6,7,8,9,10,11,12,13",0.003 ms,0.001500000 ms,2
-InsertionSort,Valores ordenados,"1,2,3,4,5,6,7,8,9,10,11,12,13",0.009 ms,0.004500000 ms,2
-MergeSort,Valores ordenados,"1,2,3,4,5,6,7,8,9,10,11,12,13",0.033 ms,0.016500000 ms,2
-QuickSort,Valores ordenados,"1,2,3,4,5,6,7,8,9,10,11,12,13",0.040 ms,0.020000000 ms,2
-SelectionSort,Valores ordenados,"1,2,3,4,5,6,7,8,9,10,11,12,13",0.011 ms,0.005500000 ms,2
-BoubleSort,Valores ordenados decrescente,"1,2,3,4,5,6,7,8,9,10,11,12,13",0.015 ms,0.007500000 ms,2
-InsertionSort,Valores ordenados decrescente,"1,2,3,4,5,6,7,8,9,10,11,12,13",0.004 ms,0.002000000 ms,2
-MergeSort,Valores ordenados decrescente,"1,2,3,4,5,6,7,8,9,10,11,12,13",0.032 ms,0.016000000 ms,2
-QuickSort,Valores ordenados decrescente,"1,2,3,4,5,6,7,8,9,10,11,12,13",0.040 ms,0.020000000 ms,2
-SelectionSort,Valores ordenados decrescente,"1,2,3,4,5,6,7,8,9,10,11,12,13",0.011 ms,0.005500000 ms,2
+BoubleSort,Valores desordenados,1,132.511 ms,0.000132511 ms,1000000
+InsertionSort,Valores desordenados,1,137.418 ms,0.000137418 ms,1000000
+MergeSort,Valores desordenados,1,3055.734 ms,0.003055734 ms,1000000
+QuickSort,Valores desordenados,1,114.032 ms,0.000114032 ms,1000000
+SelectionSort,Valores desordenados,1,101.956 ms,0.000101956 ms,1000000
+BoubleSort,Valores ordenados,1,129.145 ms,0.000129145 ms,1000000
+InsertionSort,Valores ordenados,1,128.059 ms,0.000128059 ms,1000000
+MergeSort,Valores ordenados,1,2827.913 ms,0.002827913 ms,1000000
+QuickSort,Valores ordenados,1,104.097 ms,0.000104097 ms,1000000
+SelectionSort,Valores ordenados,1,104.145 ms,0.000104145 ms,1000000
+BoubleSort,Valores ordenados decrescente,1,122.108 ms,0.000122108 ms,1000000
+InsertionSort,Valores ordenados decrescente,1,121.767 ms,0.000121767 ms,1000000
+MergeSort,Valores ordenados decrescente,1,2901.104 ms,0.002901104 ms,1000000
+QuickSort,Valores ordenados decrescente,1,103.808 ms,0.000103808 ms,1000000
+SelectionSort,Valores ordenados decrescente,1,123.862 ms,0.000123862 ms,1000000
