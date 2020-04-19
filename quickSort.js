@@ -1,26 +1,42 @@
 const performance = require("performance-now")
 
-function quickSort(origArray) {
-    if (origArray.length <= 1) { 
-        return origArray;
-    } else {
-
-        var left = [];
-        var right = [];
-        var newArray = [];
-        var pivot = origArray.pop();
-        var length = origArray.length;
-
-        for (var i = 0; i < length; i++) {
-            if (origArray[i] <= pivot) {
-                left.push(origArray[i]);
-            } else {
-                right.push(origArray[i]);
-            }
+function swap(items, leftIndex, rightIndex){
+    var temp = items[leftIndex];
+    items[leftIndex] = items[rightIndex];
+    items[rightIndex] = temp;
+}
+function partition(items, left, right) {
+    var pivot   = items[Math.floor((right + left) / 2)], //middle element
+        i       = left, //left pointer
+        j       = right; //right pointer
+    while (i <= j) {
+        while (items[i] < pivot) {
+            i++;
         }
-
-        return newArray.concat(quickSort(left), pivot, quickSort(right));
+        while (items[j] > pivot) {
+            j--;
+        }
+        if (i <= j) {
+            swap(items, i, j); //sawpping two elements
+            i++;
+            j--;
+        }
     }
+    return i;
+}
+
+function quickSort(items, left, right) {
+    var index;
+    if (items.length > 1) {
+        index = partition(items, left, right); 
+        if (left < index - 1) { 
+            quickSort(items, left, index - 1);
+        }
+        if (index < right) { 
+            quickSort(items, index, right);
+        }
+    }
+    return items;
 }
 
 module.exports = {
@@ -35,17 +51,19 @@ module.exports = {
     },
 
     async callQuickSortWithQuantity(data, quantity){
+        let localData = [...data.value];
+        
         var start = performance()  
 
         for (let index = 0; index < quantity; index++) {
-            await quickSort(data.value)      
+            await quickSort(localData, 0, localData.length - 1)      
         }   
 
         const used = process.memoryUsage();
         var end = performance()
         const duration = (end - start).toFixed(3)
         
-        const result = {duration: duration, value: data.value, type: "QuickSort", data_type: data.type,
+        const result = {duration: duration, value: data.value, type: "QuickSort", data_type: data.type, output: localData,
             rss: `${Math.round(used.rss / 1024 / 1024 * 100) / 100} MB`, 
             heapTotal: `${Math.round(used.heapTotal / 1024 / 1024 * 100) / 100} MB`,
             heapUsed: `${Math.round(used.heapUsed / 1024 / 1024 * 100) / 100} MB`,

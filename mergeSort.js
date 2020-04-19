@@ -1,31 +1,32 @@
 const performance = require("performance-now")
+function merge (left, right) {
+    let resultArray = [], leftIndex = 0, rightIndex = 0;
 
-function merge(leftArr, rightArr) {
-    var sortedArr = [];
-    while (leftArr.length && rightArr.length) {
-        if (leftArr[0] <= rightArr[0]) {
-            sortedArr.push(leftArr[0]);
-            leftArr = leftArr.slice(1)
-        } else {
-            sortedArr.push(rightArr[0]);
-            rightArr = rightArr.slice(1)
-        }
+    while (leftIndex < left.length && rightIndex < right.length) {
+      if (left[leftIndex] < right[rightIndex]) {
+        resultArray.push(left[leftIndex]);
+        leftIndex++; 
+      } else {
+        resultArray.push(right[rightIndex]);
+        rightIndex++;
+      }
     }
-    while (leftArr.length) sortedArr.push(leftArr.shift());
-    while (rightArr.length) sortedArr.push(rightArr.shift());
-    return sortedArr;
+  
+    return resultArray
+            .concat(left.slice(leftIndex))
+            .concat(right.slice(rightIndex));
 }
-
-function mergesort(arr) {
-    if (arr.length < 2) {
-        return arr;
-    } else {
-        var midpoint = parseInt(arr.length / 2);
-        var leftArr = arr.slice(0, midpoint);
-        var rightArr = arr.slice(midpoint, arr.length);
-        return merge(mergesort(leftArr), mergesort(rightArr));
+function mergesort (unsortedArray) {
+    if (unsortedArray.length <= 1) {
+      return unsortedArray;
     }
-}
+    const middle = Math.floor(unsortedArray.length / 2);
+    const left = unsortedArray.slice(0, middle);
+    const right = unsortedArray.slice(middle);
+    return merge(
+        mergesort(left), mergesort(right)
+    );
+  }
 module.exports = {
     async callMergesort(data){
         var start = performance()        
@@ -38,17 +39,19 @@ module.exports = {
     },
 
     async callMergesortWithQuantity(data, quantity){
+        let localData = [...data.value];
+        let response = []
         var start = performance()        
         
         for (let index = 0; index < quantity; index++) {
-            await mergesort(data.value)      
+            response = await mergesort(localData)      
         }
         
         const used = process.memoryUsage();
         var end = performance()
         const duration = (end - start).toFixed(3)
         
-        const result = {duration: duration, value: data.value, type: "MergeSort", data_type: data.type,
+        const result = {duration: duration, value: data.value, type: "MergeSort", data_type: data.type, output: response,
             rss: `${Math.round(used.rss / 1024 / 1024 * 100) / 100} MB`, 
             heapTotal: `${Math.round(used.heapTotal / 1024 / 1024 * 100) / 100} MB`,
             heapUsed: `${Math.round(used.heapUsed / 1024 / 1024 * 100) / 100} MB`,

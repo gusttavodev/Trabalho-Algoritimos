@@ -1,16 +1,16 @@
-Algoritimo,Entrada,Valor de entrada,Tempo de execução Total,Média de execução individual,Quantidade de execuções,Uso de memória rss,Uso de memória heapTotal,Uso de memória heapUsed,Uso de memória external
-BoubleSort,Valores desordenados,"12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213",134.951 ms,0.000134951 ms,1000000,37.18 MB,10.5 MB,5.09 MB,0.01 MB
-InsertionSort,Valores desordenados,"12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213",129.560 ms,0.000129560 ms,1000000,37.79 MB,10.5 MB,5.93 MB,0.01 MB
-MergeSort,Valores desordenados,"12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213",2993.314 ms,0.002993314 ms,1000000,42.14 MB,14.5 MB,6.6 MB,0.01 MB
-QuickSort,Valores desordenados,"12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213",109.219 ms,0.000109219 ms,1000000,42.4 MB,14.5 MB,7.23 MB,0.01 MB
-SelectionSort,Valores desordenados,"12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213",110.299 ms,0.000110299 ms,1000000,42.4 MB,14.5 MB,7.81 MB,0.01 MB
-BoubleSort,Valores ordenados,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",128.730 ms,0.000128730 ms,1000000,42.66 MB,14.5 MB,8.4 MB,0.01 MB
-InsertionSort,Valores ordenados,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",134.446 ms,0.000134446 ms,1000000,43.09 MB,14.5 MB,8.99 MB,0.01 MB
-MergeSort,Valores ordenados,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",2945.037 ms,0.002945037 ms,1000000,43.61 MB,15 MB,7.62 MB,0.01 MB
-QuickSort,Valores ordenados,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",106.999 ms,0.000106999 ms,1000000,43.86 MB,15.5 MB,8.24 MB,0.01 MB
-SelectionSort,Valores ordenados,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15",107.012 ms,0.000107012 ms,1000000,44.12 MB,15.5 MB,8.83 MB,0.01 MB
-BoubleSort,Valores ordenados decrescente,"15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1",129.298 ms,0.000129298 ms,1000000,44.38 MB,15.5 MB,5.48 MB,0.01 MB
-InsertionSort,Valores ordenados decrescente,"15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1",121.498 ms,0.000121498 ms,1000000,44.38 MB,15.5 MB,6.05 MB,0.01 MB
-MergeSort,Valores ordenados decrescente,"15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1",3013.171 ms,0.003013171 ms,1000000,52.34 MB,23.5 MB,11.92 MB,0.01 MB
-QuickSort,Valores ordenados decrescente,"15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1",107.503 ms,0.000107503 ms,1000000,52.34 MB,23.5 MB,8.59 MB,0.01 MB
-SelectionSort,Valores ordenados decrescente,"15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1",107.446 ms,0.000107446 ms,1000000,52.34 MB,23.5 MB,13.1 MB,0.01 MB
+Algoritimo,Entrada,Valor de entrada,Valor de saida,Tempo de execução Total,Média de execução individual,Quantidade de execuções,Uso de memória rss,Uso de memória heapTotal,Uso de memória heapUsed,Uso de memória external
+BoubleSort,Valores desordenados,"12,345,4,546,122,84,98,64,9,1,3223,455,23,234,213","1,4,9,12,23,64,84,98,122,213,234,345,455,546,3223",149.145 ms,0.000149145 ms,1000000,37.26 MB,10.5 MB,5.12 MB,0.01 MB
+InsertionSort,Valores desordenados,"12,345,4,546,122,84,98,64,9,1,3223,455,23,234,213","1,4,9,12,23,64,84,98,122,213,234,345,455,546,3223",137.604 ms,0.000137604 ms,1000000,38.07 MB,10.5 MB,5.96 MB,0.01 MB
+MergeSort,Valores desordenados,"12,345,4,546,122,84,98,64,9,1,3223,455,23,234,213","1,4,9,12,23,64,84,98,122,213,234,345,455,546,3223",6284.808 ms,0.006284808 ms,1000000,42.17 MB,14.5 MB,8.93 MB,0.01 MB
+QuickSort,Valores desordenados,"12,345,4,546,122,84,98,64,9,1,3223,455,23,234,213","1,4,9,12,23,64,84,98,122,213,234,345,455,546,3223",282.481 ms,0.000282481 ms,1000000,42.43 MB,15 MB,5.7 MB,0.01 MB
+SelectionSort,Valores desordenados,"12,345,4,546,122,84,98,64,9,1,3223,455,23,234,213","1,4,9,12,23,64,84,98,122,213,234,345,455,546,3223",274.546 ms,0.000274546 ms,1000000,42.43 MB,15 MB,6.29 MB,0.01 MB
+BoubleSort,Valores ordenados,"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15","1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",135.198 ms,0.000135198 ms,1000000,43.2 MB,15 MB,6.88 MB,0.01 MB
+InsertionSort,Valores ordenados,"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15","1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",142.502 ms,0.000142502 ms,1000000,44.14 MB,15.5 MB,7.47 MB,0.01 MB
+MergeSort,Valores ordenados,"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15","1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",6259.826 ms,0.006259826 ms,1000000,44.56 MB,15.5 MB,6.68 MB,0.01 MB
+QuickSort,Valores ordenados,"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15","1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",277.147 ms,0.000277147 ms,1000000,45.08 MB,15.5 MB,7.27 MB,0.01 MB
+SelectionSort,Valores ordenados,"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15","1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",267.651 ms,0.000267651 ms,1000000,45.08 MB,15.5 MB,7.86 MB,0.01 MB
+BoubleSort,Valores ordenados decrescente,"15,14,13,12,11,10,9,8,7,6,5,4,3,2,1","1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",134.235 ms,0.000134235 ms,1000000,45.08 MB,15.5 MB,8.45 MB,0.01 MB
+InsertionSort,Valores ordenados decrescente,"15,14,13,12,11,10,9,8,7,6,5,4,3,2,1","1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",132.885 ms,0.000132885 ms,1000000,53.03 MB,23.5 MB,12.95 MB,0.01 MB
+MergeSort,Valores ordenados decrescente,"15,14,13,12,11,10,9,8,7,6,5,4,3,2,1","1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",6317.343 ms,0.006317343 ms,1000000,53.03 MB,23.5 MB,8 MB,0.01 MB
+QuickSort,Valores ordenados decrescente,"15,14,13,12,11,10,9,8,7,6,5,4,3,2,1","1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",278.381 ms,0.000278381 ms,1000000,53.03 MB,23.5 MB,12.55 MB,0.01 MB
+SelectionSort,Valores ordenados decrescente,"15,14,13,12,11,10,9,8,7,6,5,4,3,2,1","1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",276.085 ms,0.000276085 ms,1000000,53.03 MB,23.5 MB,9.2 MB,0.01 MB

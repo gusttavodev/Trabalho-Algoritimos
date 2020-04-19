@@ -25,13 +25,14 @@ async function main(){
         executionResult.push(await quickSort.callQuickSortWithQuantity(data[index], executionQunatity))   
         executionResult.push(await selectionSort.callSelectionSortWithQuantity(data[index], executionQunatity))        
     }
-
+    
     const cvsData = []
     for (let index = 0; index < executionResult.length; index++) {       
         cvsData.push({
             algoritimo: executionResult[index].type,
             entrada: executionResult[index].data_type,
             valor_de_entrada: executionResult[index].value.toString(),
+            valor_de_saida: executionResult[index].output.toString(),
             tempo_de_execução: `${executionResult[index].duration} ms`,
             tempo_medio: `${(executionResult[index].duration/executionQunatity).toFixed(9)} ms`,
             execution_quantity: executionQunatity,
@@ -49,6 +50,7 @@ async function main(){
           {id: 'algoritimo', title: 'Algoritimo'},
           {id: 'entrada', title: 'Entrada'},
           {id: 'valor_de_entrada', title: 'Valor de entrada'},
+          {id: 'valor_de_saida', title: 'Valor de saida'},
           {id: 'tempo_de_execução', title: 'Tempo de execução Total'},
           {id: 'tempo_medio', title: 'Média de execução individual'},
           {id: 'execution_quantity', title: 'Quantidade de execuções'},

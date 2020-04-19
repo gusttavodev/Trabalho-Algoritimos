@@ -29,10 +29,12 @@ module.exports = {
     },
 
     async callSelectionSortWithQuantity(data, quantity){
+        let localData = [...data.value];
+        
         var start = performance()   
 
         for (let index = 0; index < quantity; index++) {
-            await selectionSort(data.value)      
+            await selectionSort(localData)      
         }
 
         const used = process.memoryUsage();
@@ -40,7 +42,7 @@ module.exports = {
         
         const duration = (end - start).toFixed(3)
         
-        const result = {duration: duration, value: data.value, type: "SelectionSort", data_type: data.type,
+        const result = {duration: duration, value: data.value, type: "SelectionSort", data_type: data.type, output: localData,
           rss: `${Math.round(used.rss / 1024 / 1024 * 100) / 100} MB`, 
           heapTotal: `${Math.round(used.heapTotal / 1024 / 1024 * 100) / 100} MB`,
           heapUsed: `${Math.round(used.heapUsed / 1024 / 1024 * 100) / 100} MB`,
